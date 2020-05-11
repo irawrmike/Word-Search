@@ -607,6 +607,8 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
             quitButtonBackground.isHidden = false
             quitButtonLabel.isHidden = false
             quitButton.isHidden = false
+            
+            pauseButton.isHidden = true
         }
         
         wordLabel.text = currentPhrase
