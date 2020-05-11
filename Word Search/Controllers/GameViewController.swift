@@ -534,8 +534,21 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? WordSearchCell else { return UICollectionViewCell() }
-        cell.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1.0)
+        if indexPath.section % 2 == 0 {
+            if indexPath.item % 2 == 0 {
+                cell.backgroundColor = UIColor.lightGray
+            }else{
+                cell.backgroundColor = UIColor.white
+            }
+        }else{
+            if indexPath.item % 2 == 0 {
+                cell.backgroundColor = UIColor.white
+            }else{
+                cell.backgroundColor = UIColor.lightGray
+            }
+        }
         cell.titleLabel?.text = grid[indexPath.section][indexPath.item]
+        cell.titleLabel?.textColor = UIColor.darkGray
         return cell
     }
     
