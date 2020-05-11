@@ -8,22 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		2796755F2462F1CC00C1845F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796755E2462F1CC00C1845F /* AppDelegate.swift */; };
-		279675612462F1CC00C1845F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279675602462F1CC00C1845F /* SceneDelegate.swift */; };
-		279675632462F1CC00C1845F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279675622462F1CC00C1845F /* ViewController.swift */; };
+		279675632462F1CC00C1845F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279675622462F1CC00C1845F /* MainMenuViewController.swift */; };
 		279675662462F1CC00C1845F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279675642462F1CC00C1845F /* Main.storyboard */; };
 		279675682462F1CE00C1845F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279675672462F1CE00C1845F /* Assets.xcassets */; };
 		2796756B2462F1CE00C1845F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279675692462F1CE00C1845F /* LaunchScreen.storyboard */; };
+		27A055E42466FEF800C4A793 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055E32466FEF800C4A793 /* GameViewController.swift */; };
+		27A055E92467003A00C4A793 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055E82467003A00C4A793 /* Difficulty.swift */; };
+		27A055EB2467006A00C4A793 /* WordSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055EA2467006A00C4A793 /* WordSearchCell.swift */; };
+		27A055ED2467012700C4A793 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055EC2467012700C4A793 /* Words.swift */; };
+		27A055EF2468528400C4A793 /* ScreenOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055EE2468528400C4A793 /* ScreenOrientation.swift */; };
+		27A055F12468666B00C4A793 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055F02468666B00C4A793 /* Alphabet.swift */; };
+		27A055FB2468C20600C4A793 /* WordOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055FA2468C20600C4A793 /* WordOrientation.swift */; };
+		27A055FD246994FB00C4A793 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055FC246994FB00C4A793 /* ListTableViewCell.swift */; };
+		27A056002469997000C4A793 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A055FF2469997000C4A793 /* MainMenuScene.swift */; };
+		27A056022469A8A200C4A793 /* MainMenuBackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A056012469A8A200C4A793 /* MainMenuBackgroundNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2796755B2462F1CC00C1845F /* Word Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2796755E2462F1CC00C1845F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		279675602462F1CC00C1845F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		279675622462F1CC00C1845F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		279675622462F1CC00C1845F /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		279675652462F1CC00C1845F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		279675672462F1CE00C1845F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2796756A2462F1CE00C1845F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2796756C2462F1CE00C1845F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A055E124649EB300C4A793 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A055E32466FEF800C4A793 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		27A055E82467003A00C4A793 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		27A055EA2467006A00C4A793 /* WordSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearchCell.swift; sourceTree = "<group>"; };
+		27A055EC2467012700C4A793 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		27A055EE2468528400C4A793 /* ScreenOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOrientation.swift; sourceTree = "<group>"; };
+		27A055F02468666B00C4A793 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
+		27A055FA2468C20600C4A793 /* WordOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordOrientation.swift; sourceTree = "<group>"; };
+		27A055FC246994FB00C4A793 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		27A055FF2469997000C4A793 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		27A056012469A8A200C4A793 /* MainMenuBackgroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBackgroundNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,56 @@
 		2796755D2462F1CC00C1845F /* Word Search */ = {
 			isa = PBXGroup;
 			children = (
-				2796755E2462F1CC00C1845F /* AppDelegate.swift */,
-				279675602462F1CC00C1845F /* SceneDelegate.swift */,
-				279675622462F1CC00C1845F /* ViewController.swift */,
-				279675642462F1CC00C1845F /* Main.storyboard */,
+				27A055E72467002800C4A793 /* Models */,
+				27A055E62467001E00C4A793 /* Views */,
+				27A055E52467000800C4A793 /* Controllers */,
+				27A055FE2469995C00C4A793 /* Scenes */,
 				279675672462F1CE00C1845F /* Assets.xcassets */,
+				279675642462F1CC00C1845F /* Main.storyboard */,
 				279675692462F1CE00C1845F /* LaunchScreen.storyboard */,
-				2796756C2462F1CE00C1845F /* Info.plist */,
+				2796755E2462F1CC00C1845F /* AppDelegate.swift */,
+				27A055E124649EB300C4A793 /* Info.plist */,
 			);
 			path = "Word Search";
+			sourceTree = "<group>";
+		};
+		27A055E52467000800C4A793 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27A055E32466FEF800C4A793 /* GameViewController.swift */,
+				279675622462F1CC00C1845F /* MainMenuViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		27A055E62467001E00C4A793 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27A055FC246994FB00C4A793 /* ListTableViewCell.swift */,
+				27A056012469A8A200C4A793 /* MainMenuBackgroundNode.swift */,
+				27A055EA2467006A00C4A793 /* WordSearchCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27A055E72467002800C4A793 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27A055E82467003A00C4A793 /* Difficulty.swift */,
+				27A055EE2468528400C4A793 /* ScreenOrientation.swift */,
+				27A055FA2468C20600C4A793 /* WordOrientation.swift */,
+				27A055EC2467012700C4A793 /* Words.swift */,
+				27A055F02468666B00C4A793 /* Alphabet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27A055FE2469995C00C4A793 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				27A055FF2469997000C4A793 /* MainMenuScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +197,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279675632462F1CC00C1845F /* ViewController.swift in Sources */,
+				27A056002469997000C4A793 /* MainMenuScene.swift in Sources */,
+				279675632462F1CC00C1845F /* MainMenuViewController.swift in Sources */,
+				27A055E42466FEF800C4A793 /* GameViewController.swift in Sources */,
+				27A055F12468666B00C4A793 /* Alphabet.swift in Sources */,
+				27A055E92467003A00C4A793 /* Difficulty.swift in Sources */,
+				27A055ED2467012700C4A793 /* Words.swift in Sources */,
 				2796755F2462F1CC00C1845F /* AppDelegate.swift in Sources */,
-				279675612462F1CC00C1845F /* SceneDelegate.swift in Sources */,
+				27A055FB2468C20600C4A793 /* WordOrientation.swift in Sources */,
+				27A055EB2467006A00C4A793 /* WordSearchCell.swift in Sources */,
+				27A055EF2468528400C4A793 /* ScreenOrientation.swift in Sources */,
+				27A055FD246994FB00C4A793 /* ListTableViewCell.swift in Sources */,
+				27A056022469A8A200C4A793 /* MainMenuBackgroundNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,15 +352,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NTZ378Q4WS;
 				INFOPLIST_FILE = "Word Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mikestoltman.Word-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Mike Stoltman Development Wildcard";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,15 +373,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NTZ378Q4WS;
 				INFOPLIST_FILE = "Word Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mikestoltman.Word-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Mike Stoltman Development Wildcard";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
