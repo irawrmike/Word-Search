@@ -50,6 +50,12 @@ class GameViewController: UIViewController {
     private var wordLabel: UILabel!
     private var tableView: UITableView!
     
+    private var quitButton: UIButton!
+    private var quitButtonBackground: UIView!
+    private var quitButtonLabel: UILabel!
+    
+    private var pauseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,8 +78,7 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTicked), userInfo: nil, repeats: true)
+        startTimer()
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -149,6 +154,43 @@ extension GameViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         bottomContainerView.addSubview(tableView)
         
+        // Quit Button
+        quitButtonBackground = UIView(frame: CGRect.zero)
+        quitButtonBackground.backgroundColor = UIColor.gray
+        quitButtonBackground.layer.cornerRadius = 20.0
+        quitButtonBackground.layer.borderWidth = 1.0
+        quitButtonBackground.layer.borderColor = UIColor.darkGray.cgColor
+        quitButtonBackground.translatesAutoresizingMaskIntoConstraints = false
+        quitButtonBackground.isHidden = true
+        view.addSubview(quitButtonBackground)
+        
+        quitButtonLabel = UILabel(frame: CGRect.zero)
+        quitButtonLabel.text = "Quit"
+        quitButtonLabel.textAlignment = .center
+        quitButtonLabel.textColor = UIColor.white
+        quitButtonLabel.translatesAutoresizingMaskIntoConstraints = false
+        quitButtonLabel.isHidden = true
+        view.addSubview(quitButtonLabel)
+        
+        quitButton = UIButton(frame: CGRect.zero)
+        quitButton.addTarget(self, action: #selector(quitButtonTapped), for: .touchUpInside)
+        quitButton.translatesAutoresizingMaskIntoConstraints = false
+        quitButton.isHidden = true
+        view.addSubview(quitButton)
+        
+        // Pause Button
+        pauseButton = UIButton(frame: CGRect.zero)
+        pauseButton.setImage(UIImage(named: "pause-button"), for: .normal)
+        pauseButton.imageView?.tintColor = UIColor.white
+        pauseButton.imageView?.contentMode = .scaleAspectFit
+        pauseButton.backgroundColor = UIColor.gray
+        pauseButton.layer.cornerRadius = 20.0
+        pauseButton.layer.borderWidth = 1.0
+        pauseButton.layer.borderColor = UIColor.darkGray.cgColor
+        pauseButton.addTarget(self, action: #selector(pauseButtonTapped), for: .touchUpInside)
+        pauseButton.translatesAutoresizingMaskIntoConstraints = false
+        pauseButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pauseButton)
     }
     
     private func setupConstraints() {
@@ -204,6 +246,32 @@ extension GameViewController {
         tableView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 0.0).isActive = true
         tableView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: 0.0).isActive = true
         
+        // Quit Button
+        quitButtonBackground.centerYAnchor.constraint(equalTo: topContainerView.centerYAnchor).isActive = true
+        quitButtonBackground.centerXAnchor.constraint(equalTo: topContainerView.centerXAnchor).isActive = true
+        quitButtonBackground.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
+        quitButtonLabel.topAnchor.constraint(equalTo: quitButtonBackground.topAnchor, constant: 5.0).isActive = true
+        quitButtonLabel.bottomAnchor.constraint(equalTo: quitButtonBackground.bottomAnchor, constant: -5.0).isActive = true
+        quitButtonLabel.leadingAnchor.constraint(equalTo: quitButtonBackground.leadingAnchor, constant: 20.0).isActive = true
+        quitButtonLabel.trailingAnchor.constraint(equalTo: quitButtonBackground.trailingAnchor, constant: -20.0).isActive = true
+        
+        quitButton.topAnchor.constraint(equalTo: quitButtonBackground.topAnchor).isActive = true
+        quitButton.bottomAnchor.constraint(equalTo: quitButtonBackground.bottomAnchor).isActive = true
+        quitButton.leadingAnchor.constraint(equalTo: quitButtonBackground.leadingAnchor).isActive = true
+        quitButton.trailingAnchor.constraint(equalTo: quitButtonBackground.trailingAnchor).isActive = true
+        
+        // Pause Button
+        pauseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        pauseButton.widthAnchor.constraint(equalTo: pauseButton.heightAnchor, multiplier: 1.0).isActive = true
+        pauseButton.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor, constant: -20.0).isActive = true
+        pauseButton.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -20.0).isActive = true
+        
+        pauseButton.imageView?.topAnchor.constraint(equalTo: pauseButton.topAnchor, constant: 5.0).isActive = true
+        pauseButton.imageView?.bottomAnchor.constraint(equalTo: pauseButton.bottomAnchor, constant: -5.0).isActive = true
+        pauseButton.imageView?.leadingAnchor.constraint(equalTo: pauseButton.leadingAnchor, constant: 5.0).isActive = true
+        pauseButton.imageView?.trailingAnchor.constraint(equalTo: pauseButton.trailingAnchor, constant: -5.0).isActive = true
+        
         if UIApplication.shared.statusBarOrientation.isLandscape {
             updateConstraints(.Landscape)
         }else{
@@ -257,6 +325,11 @@ extension GameViewController {
 // MARK: Timer Functions
 
 extension GameViewController {
+    
+    private func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTicked), userInfo: nil, repeats: true)
+    }
     
     @objc private func timerTicked() {
         elapsedTime += 1.0
@@ -530,6 +603,10 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
             timer?.invalidate()
             currentPhrase = "GAME OVER"
             collectionView.allowsSelection = false
+            
+            quitButtonBackground.isHidden = false
+            quitButtonLabel.isHidden = false
+            quitButton.isHidden = false
         }
         
         wordLabel.text = currentPhrase
@@ -560,5 +637,34 @@ extension GameViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     // FIXME: Cell height collapsing
+    
+}
+
+// MARK: Button Functions
+extension GameViewController {
+    
+    @objc private func pauseButtonTapped() {
+        if quitButton.isHidden {
+            timer?.invalidate()
+            
+            pauseButton.setImage(UIImage(named: "play-button"), for: .normal)
+            
+            quitButtonBackground.isHidden = false
+            quitButtonLabel.isHidden = false
+            quitButton.isHidden = false
+        }else{
+            pauseButton.setImage(UIImage(named: "pause-button"), for: .normal)
+            
+            quitButtonBackground.isHidden = true
+            quitButtonLabel.isHidden = true
+            quitButton.isHidden = true
+            
+            startTimer()
+        }
+    }
+    
+    @objc private func quitButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
     
 }
