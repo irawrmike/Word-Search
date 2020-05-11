@@ -16,7 +16,6 @@ class MainMenuBackgroundNode: SKNode {
     override init() {
         super.init()
         
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
